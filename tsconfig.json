@@ -17,6 +17,13 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "paths": {}
+    "paths": {
+      "@xiv-api/xiv-api": [
+        "libs/xiv-api/src"
+      ],
+      "@xiv-api/xiv-api/*": [
+        "libs/xiv-api/src/*"
+      ]
+    }
   }
 }
