@@ -6,6 +6,7 @@ import { createBullBoard } from 'bull-board';
 import { BullAdapter } from 'bull-board/bullAdapter';
 import { Queue } from 'bull';
 import { InjectQueue } from '@nestjs/bull';
+import { ItemModule } from './item/item.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { InjectQueue } from '@nestjs/bull';
     BullModule.registerQueue({
       name: 'starter',
     }),
+    ItemModule,
   ],
   controllers: [AppController],
   providers: [AppService],
@@ -28,7 +30,7 @@ export class AppModule {
     const { router } = createBullBoard([
       new BullAdapter(starterQueue, { readOnlyMode: false }),
     ]);
-    starterQueue.add({}, { repeat: { cron: '0 0 22 * * *' }, jobId: 'test' });
+    starterQueue.add({}, { jobId: 'starter' });
     this.router = router;
   }
 
