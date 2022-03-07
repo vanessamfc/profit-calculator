@@ -28,4 +28,9 @@ export class XivApiService {
     );
     return itens.reduce((acc, item) => [...acc, ...item], []);
   }
+
+  async getItemDetail(id: number) {
+    const response = await axios.get(`https://xivapi.com/item/${id}`);
+    return response.data;
+  }
 }
