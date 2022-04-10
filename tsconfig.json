@@ -23,6 +23,12 @@
       ],
       "@xiv-api/xiv-api/*": [
         "libs/xiv-api/src/*"
+      ],
+      "@repo/repository": [
+        "libs/repository/src"
+      ],
+      "@repo/repository/*": [
+        "libs/repository/src/*"
       ]
     }
   }

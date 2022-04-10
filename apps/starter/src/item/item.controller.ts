@@ -15,6 +15,7 @@ export class ItemController {
   @Process()
   async transcode() {
     const ids = await this.itemService.sendAllIds();
+    console.log('entrou');
     ids.map((id) => this.client.emit('item-collector', { id }));
     return true;
   }

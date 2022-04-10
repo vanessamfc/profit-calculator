@@ -30,7 +30,6 @@ export class AppModule {
     const { router } = createBullBoard([
       new BullAdapter(starterQueue, { readOnlyMode: false }),
     ]);
-    starterQueue.add({}, { jobId: 'starter' });
     this.router = router;
   }
 

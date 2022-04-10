@@ -30,7 +30,9 @@ export class XivApiService {
   }
 
   async getItemDetail(id: number) {
-    const response = await axios.get(`https://xivapi.com/item/${id}`);
+    const response = await axios.get(
+      `https://xivapi.com/item/${id}?columns=ID,Name,Description,GameContentLinks.GilShopItem`,
+    );
     return response.data;
   }
 }
